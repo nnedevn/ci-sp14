@@ -75,6 +75,33 @@ public function add()
  public function insert()
  {// will insert the data enetered via add();
 
+$this->load->model('Mailing_list_model'); // this loads the model
+$this->load->library->('form_validation'); // a lot of crap
+$this->load->helper->('url'); //usually small scripts
+
+if ($this->form_validation->run()==FALSE) //failed validation send back to form 
+{
+	echo"insert failed";
+}else //insert the data 
+{
+$post = array(
+	'first_name' => $this->inptut->post('first_name');
+	'last_name' => $this->inptut->post('last_name');
+	'email' => $this->inptut->post('email');
+	'address' => $this->inptut->post('address');
+	'state_code' => $this->inptut->post('state_code');
+	'zip_postal' => $this->inptut->post('zip_postal');
+	'username' => $this->inptut->post('username');
+	'password' => $this->inptut->post('password');
+	'bio' => $this->inptut->post('bio');
+	'interests' => $this->inptut->post('interests');
+	'num_tours' => $this->inptut->post('num_tours');
+	);
+	
+$this->Mailing_list_model->insert($post);
+echo "Data Inserted";
+
+}
 
  }// end of insert. 
 }

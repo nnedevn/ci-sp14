@@ -1,12 +1,14 @@
 <?php 
 //  /view/mailing_list/add_mailing_list.php
 // an add form to add an item to the table
+echo validation_errors();
 
 echo validation_errors();
 
+
  ?>
 <h1>Add to mailing list</h1>
- <?=form_open('mailing_list/insert');?> 
+<?=form_open('mailing_list/insert');?> 
 <?php 
 $first_name = array(
 	'name' => 'firstname',
@@ -15,6 +17,7 @@ $first_name = array(
 echo form_label('First Name', 'first_name') . ' : '; 
 echo " : ";
 echo form_input($firstname).'<br/>';
+
 
 
 $last_name = array(
@@ -45,6 +48,13 @@ echo " : ";
 echo form_input($address) .'<br/>';
 
 
+$state_code = array(
+	'name' => 'state_code',
+	'id' => 'state_code'
+	);
+echo form_label('State: ', 'state_code') . ' : '; 
+echo " : ";
+echo form_input($state_code) .'<br/>';
 
 $zip_postal = array(
 	'name' => 'zip_postal',
@@ -53,6 +63,46 @@ $zip_postal = array(
 echo form_label('zip_postal', 'zip_postal') . ' : '; 
 echo " : ";
 echo form_input($zip_postal) .'<br/>';
+
+$username = array(
+	'name' => 'username',
+	'id' => 'username'
+	);
+echo form_label('username', 'username') . ' : '; 
+echo " : ";
+echo form_input($username) .'<br/>';
+
+$password = array(
+	'name' => 'password',
+	'id' => 'password'
+	);
+echo form_label('password', 'password') . ' : '; 
+echo " : ";
+echo form_input($password) .'<br/>';
+
+$bio = array(
+	'name' => 'bio',
+	'id' => 'bio'
+	);
+echo form_label('Bio', 'bio') . ' : '; 
+echo " : ";
+echo form_textarea($bio) .'<br/>';
+
+$interests = array(
+	'backpack_cal' => 'Bioackpack California',
+	'cycle_cal' => 'Cycle California'
+	'nature_watch' => 'Nature Watch'
+	);
+
+// $interests = array(
+// 	'name' => 'interests',
+// 	'id' => 'interests'
+// 	);
+
+echo form_label('Interests', 'interests') . ' : '; 
+echo " : ";
+echo form_multiselect('interests',$interests) .'<br/>';
+
 
 
 
@@ -76,8 +126,7 @@ $num_tours1 = array(
 
 	);
 
-echo "<fieldset>";
-echo "<legend> Number of tours </legend>";
+
 echo form_label('None', 'num_tours') . ' : '; 
 echo " : ";
 
@@ -95,6 +144,6 @@ echo "</fieldset>";
 
  ?>
 
-
+<?=form_submit('submit', 'Add to mailing list');?>
 
  <?=form_close('');?>
