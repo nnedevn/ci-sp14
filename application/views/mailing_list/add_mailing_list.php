@@ -141,7 +141,6 @@ echo form_radio($num_tours1).'<br/>';
 
 echo "</fieldset>";
 
-
  ?>
 
 <?=form_submit('submit', 'Add to mailing list');?>
