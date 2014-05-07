@@ -62,7 +62,6 @@ public function add()
 	$data['style'] = "cerulian.css";
 	$data['copyright'] = "Copyright goes here.";
 	$data['base_url'] = base_url();
-	$this->load->view('header',$data);
 	
 	$this->load->view('header',$data);  
 
@@ -77,11 +76,32 @@ public function add()
 
 $this->load->model('Mailing_list_model'); // this loads the model
 $this->load->library->('form_validation'); // a lot of crap
-$this->load->helper->('url'); //usually small scripts
+// $this->load->helper->('url'); //usually small scripts
+//must have at least one validation rule to be able to insert in db.
+$this->form_validation->set_rules('email','Email','trim|required|valid_email');
+
 
 if ($this->form_validation->run()==FALSE) //failed validation send back to form 
-{
+{// View data of fail goes here
+
+	$this->load->helper('form');
+
+	$data['title'] = "Adding a reckord.";
+	// this refers to the current running object
+	// self refers to the class
+	$data['banner'] = "Data Entry Error!";
+	$data['style'] = "cerulian.css";
+	$data['copyright'] = "Copyright goes here.";
+	$data['base_url'] = base_url();
+	
+	$this->load->view('header',$data);  
+
+	$this->load->view('mailing_list/add_mailing_list',$data);
+
+	$this->load->view('footer', $data);
+
 	echo"insert failed";
+
 }else //insert the data 
 {
 $post = array(
@@ -99,7 +119,7 @@ $post = array(
 	);
 	
 $this->Mailing_list_model->insert($post);
-echo "Data Inserted";
+echo "Data Inserted?";
 
 }
 

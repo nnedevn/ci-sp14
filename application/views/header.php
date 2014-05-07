@@ -14,3 +14,25 @@
 <?php //echo anchor('mailing_list/' "Mailing list"); ?>
 </li>
 
+<div>
+	<ul class="nav navbar-nav">
+		<li class="active><a href="">Activelink</a>"></li>
+		<li>
+			<?php 
+				echo anchor('mailing_list', 'Mailing List');
+			 ?>
+
+		</li>
+		<li>
+			<?php 
+				echo anchor('mailing_list/add', 'Add');
+			 ?>
+
+		</li>
+	</ul>
+
+
+
+
+</div>
+
