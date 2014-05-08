@@ -14,9 +14,17 @@ $first_name = array(
 	'id' => 'firstname',
 	'value'=> set_value('firstname',''),
 	);
+
+
+/*$js = 'onClick="some_function()"';
+
+echo form_input('username', 'johndoe', $js);
+*/
+$req ='required="required"';
+
 echo form_label('First Name', 'first_name') . ' : '; 
 echo " : ";
-echo form_input($firstname).'<br/>';
+echo form_input($firstname, '', $req).'<br/>';
 
 $last_name = array(
 	'name' => 'lastname',
@@ -41,7 +49,8 @@ echo form_input($email).'<br/>';
 
 $address = array(
 	'name' => 'address',
-	'id' => 'address'
+	'id' => 'address',
+	'value'=> set_value('address',''),
 	);
 echo form_label('Address', 'adresss') . ' : '; 
 echo " : ";
@@ -50,7 +59,8 @@ echo form_input($address) .'<br/>';
 
 $state_code = array(
 	'name' => 'state_code',
-	'id' => 'state_code'
+	'id' => 'state_code',
+	'value'=> set_value('state_code',''),
 	);
 echo form_label('State: ', 'state_code') . ' : '; 
 echo " : ";
@@ -58,7 +68,8 @@ echo form_input($state_code) .'<br/>';
 
 $zip_postal = array(
 	'name' => 'zip_postal',
-	'id' => 'zip_postal'
+	'id' => 'zip_postal',
+	'value'=> set_value('zip_postal',''),
 	);
 echo form_label('zip_postal', 'zip_postal') . ' : '; 
 echo " : ";
@@ -66,7 +77,8 @@ echo form_input($zip_postal) .'<br/>';
 
 $username = array(
 	'name' => 'username',
-	'id' => 'username'
+	'id' => 'username', 
+	'value'=> set_value('username',''),
 	);
 echo form_label('username', 'username') . ' : '; 
 echo " : ";
@@ -74,11 +86,12 @@ echo form_input($username) .'<br/>';
 
 $password = array(
 	'name' => 'password',
-	'id' => 'password'
+	'id' => 'password',
+	'value'=> set_value('password',''),
 	);
 echo form_label('password', 'password') . ' : '; 
 echo " : ";
-echo form_input($password) .'<br/>';
+echo form_password($password) .'<br/>';
 
 $bio = array(
 	'name' => 'bio',
