@@ -1,5 +1,5 @@
 <?php 
-// mailing_list.php
+// mailing_list.php is the controler
 
 class Mailing_list extends CI_controller{
 
