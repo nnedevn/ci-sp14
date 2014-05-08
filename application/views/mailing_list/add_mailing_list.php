@@ -5,7 +5,6 @@ echo validation_errors();
 
 echo validation_errors();
 
-
  ?>
 <h1>Add to mailing list</h1>
 <?=form_open('mailing_list/insert');?> 
@@ -18,8 +17,6 @@ echo form_label('First Name', 'first_name') . ' : ';
 echo " : ";
 echo form_input($firstname).'<br/>';
 
-
-
 $last_name = array(
 	'name' => 'lastname',
 	'id' => 'lastname'
@@ -31,7 +28,8 @@ echo form_input($lastname).'<br/>';
 
 $email = array(
 	'name' => 'email',
-	'id' => 'email'
+	'id' => 'email',
+	'value'=> set_value('email',''), // this will make it function as a sticky form
 	);
 echo form_label('Email', 'email') . ' : '; 
 echo " : ";
