@@ -79,6 +79,13 @@ $this->load->library->('form_validation'); // a lot of crap
 // $this->load->helper->('url'); //usually small scripts
 //must have at least one validation rule to be able to insert in db.
 $this->form_validation->set_rules('email','Email','trim|required|valid_email');
+$this->form_validation->set_rules('first_name','First Name','trim|required');
+$this->form_validation->set_rules('last_name','Last Name','trim|required');
+$this->form_validation->set_rules('address','Address','trim|required');
+$this->form_validation->set_rules('state_code','State','trim|required');
+$this->form_validation->set_rules('zip_postal','Zip Code','trim|required');
+$this->form_validation->set_rules('username','Username','trim|required');
+$this->form_validation->set_rules('password','Password','trim|required');
 
 
 if ($this->form_validation->run()==FALSE) //failed validation send back to form 
