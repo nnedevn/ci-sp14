@@ -11,7 +11,8 @@ echo validation_errors();
 <?php 
 $first_name = array(
 	'name' => 'firstname',
-	'id' => 'firstname'
+	'id' => 'firstname',
+	'value'=> set_value('firstname',''),
 	);
 echo form_label('First Name', 'first_name') . ' : '; 
 echo " : ";
@@ -19,7 +20,8 @@ echo form_input($firstname).'<br/>';
 
 $last_name = array(
 	'name' => 'lastname',
-	'id' => 'lastname'
+	'id' => 'lastname',
+	'value'=> set_value('email',''),
 	);
 echo form_label('Last Name', 'last_name') . ' : '; 
 echo " : ";
