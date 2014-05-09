@@ -14,12 +14,6 @@ $first_name = array(
 	'id' => 'firstname',
 	'value'=> set_value('firstname',''),
 	);
-
-
-/*$js = 'onClick="some_function()"';
-
-echo form_input('username', 'johndoe', $js);
-*/
 $req ='required="required"';
 
 echo form_label('First Name', 'first_name') . ' : '; 
@@ -103,8 +97,8 @@ echo form_textarea($bio) .'<br/>';
 
 $interests = array(
 	'backpack_cal' => 'Bioackpack California',
-	'cycle_cal' => 'Cycle California'
-	'nature_watch' => 'Nature Watch'
+	'cycle_cal' => 'Cycle California',
+	'nature_watch' => 'Nature Watch',
 	);
 
 // $interests = array(
@@ -122,19 +116,19 @@ echo form_multiselect('interests',$interests) .'<br/>';
 
 $num_tours1 = array(
 	'name' => 'num_tours',
-	'id' => 'num_tours1'
+	'id' => 'num_tours1',
 	'value' => '0', 
 	'checked' => TRUE,
 	);
 $num_tours2 = array(
 	'name' => 'num_tours',
-	'id' => 'num_tours2'
+	'id' => 'num_tours2',
 	'value' => '1-3', 
 
 	);
 $num_tours1 = array(
 	'name' => 'num_tours',
-	'id' => 'num_tours3'
+	'id' => 'num_tours3',
 	'value' => '4-6', 
 
 	);
