@@ -59,7 +59,7 @@ public function add()
 	// this refers to the current running object
 	// self refers to the class
 	$data['banner'] = "Add a reckord";
-	$data['style'] = "cerulian.css";
+	$data['style'] = "cerulean.css";
 	$data['copyright'] = "Copyright goes here.";
 	$data['base_url'] = base_url();
 	

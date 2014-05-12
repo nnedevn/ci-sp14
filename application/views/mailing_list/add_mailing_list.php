@@ -10,24 +10,24 @@ echo validation_errors();
 <?=form_open('mailing_list/insert');?> 
 <?php 
 $first_name = array(
-	'name' => 'firstname',
-	'id' => 'firstname',
-	'value'=> set_value('firstname',''),
+	'name' => 'first_name',
+	'id' => 'first_name',
+	'value'=> set_value('first_name',''),
 	);
 $req ='required="required"';
 
 echo form_label('First Name', 'first_name') . ' : '; 
-echo " : ";
-echo form_input($firstname, '', $req).'<br/>';
+
+echo form_input($first_name, '', $req).'<br/>';
 
 $last_name = array(
-	'name' => 'lastname',
-	'id' => 'lastname',
-	'value'=> set_value('email',''),
+	'name' => 'last_name',
+	'id' => 'last_name',
+	'value'=> set_value('last_name',''),
 	);
 echo form_label('Last Name', 'last_name') . ' : '; 
-echo " : ";
-echo form_input($lastname).'<br/>';
+
+echo form_input($last_name).'<br/>';
 
 
 $email = array(
@@ -36,7 +36,7 @@ $email = array(
 	'value'=> set_value('email',''), // this will make it function as a sticky form
 	);
 echo form_label('Email', 'email') . ' : '; 
-echo " : ";
+
 echo form_input($email).'<br/>';
 
 
@@ -47,7 +47,7 @@ $address = array(
 	'value'=> set_value('address',''),
 	);
 echo form_label('Address', 'adresss') . ' : '; 
-echo " : ";
+
 echo form_input($address) .'<br/>';
 
 
@@ -57,7 +57,7 @@ $state_code = array(
 	'value'=> set_value('state_code',''),
 	);
 echo form_label('State: ', 'state_code') . ' : '; 
-echo " : ";
+
 echo form_input($state_code) .'<br/>';
 
 $zip_postal = array(
@@ -66,7 +66,7 @@ $zip_postal = array(
 	'value'=> set_value('zip_postal',''),
 	);
 echo form_label('zip_postal', 'zip_postal') . ' : '; 
-echo " : ";
+
 echo form_input($zip_postal) .'<br/>';
 
 $username = array(
@@ -75,7 +75,7 @@ $username = array(
 	'value'=> set_value('username',''),
 	);
 echo form_label('username', 'username') . ' : '; 
-echo " : ";
+
 echo form_input($username) .'<br/>';
 
 $password = array(
@@ -84,7 +84,7 @@ $password = array(
 	'value'=> set_value('password',''),
 	);
 echo form_label('password', 'password') . ' : '; 
-echo " : ";
+
 echo form_password($password) .'<br/>';
 
 $bio = array(
@@ -92,7 +92,7 @@ $bio = array(
 	'id' => 'bio'
 	);
 echo form_label('Bio', 'bio') . ' : '; 
-echo " : ";
+
 echo form_textarea($bio) .'<br/>';
 
 $interests = array(
@@ -107,7 +107,7 @@ $interests = array(
 // 	);
 
 echo form_label('Interests', 'interests') . ' : '; 
-echo " : ";
+
 echo form_multiselect('interests',$interests) .'<br/>';
 
 
@@ -135,13 +135,10 @@ $num_tours1 = array(
 
 
 echo form_label('None', 'num_tours') . ' : '; 
-echo " : ";
 
 echo form_label('1-3', 'num_tours2') . ' : '; 
-echo " : ";
 
 echo form_label('4-6', 'num_tours3') . ' : '; 
-echo " : ";
 
 
 echo form_radio($num_tours1).'<br/>';

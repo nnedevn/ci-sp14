@@ -24,7 +24,7 @@ class Mailing_list_model extends CI_Model
 public function get_id($id){
 		
 		// $this->db->select('userid, first_name, last_name'); //selct fields from
-		$this->db->where('userId', $id); //this is where it gets passed in
+		$this->db->where('userid', $id); //this is where it gets passed in
 		return $this->db->get("mailing_list");	
 
 }// end get_id
