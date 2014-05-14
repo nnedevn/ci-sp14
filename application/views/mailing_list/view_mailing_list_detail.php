@@ -13,7 +13,7 @@ if ($query->num_rows>0) : ?>
 	<p>	Zip Code: <?=$row->zip_postal;?></p>
 	<p>	Username: <?=$row->username;?></p>
 	<p>	Bio: <?=$row->bio;?></p>
-
+	<p>Interests <?=$row->interests;?></p>
 	<p>	Tours: <?=$row->num_tours;?></p>
 
 

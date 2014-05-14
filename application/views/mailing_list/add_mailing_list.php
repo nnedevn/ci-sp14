@@ -2,9 +2,6 @@
 //  /view/mailing_list/add_mailing_list.php
 // an add form to add an item to the table
 echo validation_errors();
-
-echo validation_errors();
-
  ?>
 <h1>Add to mailing list</h1>
 <?=form_open('mailing_list/insert');?> 
@@ -85,7 +82,7 @@ $password = array(
 	);
 echo form_label('password', 'password') . ' : '; 
 
-echo form_password($password) .'<br/>';
+echo form_password($password) . '<br/>';
 
 $bio = array(
 	'name' => 'bio',
