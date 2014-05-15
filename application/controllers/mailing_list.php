@@ -125,10 +125,13 @@ public function add()
 		'num_tours' => $this->input->post('num_tours'),
 		);
 		
-	$this->Mailing_list_model->insert($post);
-	echo "Data Inserted?";
+	$id = $this->Mailing_list_model->insert($post);
+	
+	// echo ("id is " . $id);
+	// die();	
+	redirect('/mailing_list/view/' . $id);
 
-	}
+	}// end if
 
 
 }// end of insert. 

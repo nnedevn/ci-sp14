@@ -30,9 +30,12 @@ public function get_id($id){
 }// end get_id
 
 public function insert($row){
+	
 	$this->db->insert('mailing_list', $row);
+	return $this->db->insert_id();
 
 }//end insert()
+
 }
 
 
