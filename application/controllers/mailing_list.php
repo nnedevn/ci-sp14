@@ -5,25 +5,21 @@ class Mailing_list extends CI_controller{
 
 function __construct(){
 	parent::__construct();
-	$this->load->helper('url');
-	
+	$this->load->model('Mailing_list_model');
 }// end of constructor
 public function index()
 {
 	//here we're making data available to out header and footer
-	$this->load->model('Mailing_list_model'); // this loads the model
-	$data['query'] = $this->Mailing_list_model->get_mailing_list(); //this executes the function
+	 // this loads the model
+	$data['query'] = $this->Mailing_list_model->get_mailing_list();
+	$this->config->set_item('style', 'cerulean.css');
+	// this will overrite the config. 
 	$data['title'] = "Here is our title tag.";
-	// this refers to the current running object
-	// self refers to the class
 	$data['banner'] = "Here is our web site.";
-	$data['style'] = "cerulean.css";
 	$data['copyright'] = "Here is our title tag.";
-	$data['base_url'] = base_url();
+
 	$this->load->view('header',$data);
-	//var_dump($data['query']);
-	$this->load->view('mailing_list/view_mailing_list',$data);
-	//var_dump( $data['mail_list']);  
+	$this->load->view('mailing_list/view_mailing_list',$data); 
 	$this->load->view('footer',$data);  
 	//this as an object has a property of load, which has a method of view and passes to header the $data
 
@@ -32,15 +28,15 @@ public function index()
 public function view($id)
 {// this will show us the data from a single page. 
 	//here we're making data available to out header and footer
-	$this->load->model('Mailing_list_model'); // this loads the model
+	 // this loads the model
 	$data['query'] = $this->Mailing_list_model->get_id($id); //this executes the function
 	$data['title'] = "Here is our title tag.";
 	// this refers to the current running object
 	// self refers to the class
 	$data['banner'] = $id;
-	$data['style'] = "cerulean.css";
+	
 	$data['copyright'] = "Here is our title tag.";
-	$data['base_url'] = base_url();
+
 	$this->load->view('header',$data);
 	//var_dump($data['query']);
 	$this->load->view('mailing_list/view_mailing_list_detail',$data);
@@ -59,9 +55,9 @@ public function add()
 	// this refers to the current running object
 	// self refers to the class
 	$data['banner'] = "Add a reckord";
-	$data['style'] = "cerulean.css";
+	
 	$data['copyright'] = "Copyright goes here.";
-	$data['base_url'] = base_url();
+
 	
 	$this->load->view('header',$data);  
 
@@ -74,7 +70,7 @@ public function add()
  public function insert()
  {// will insert the data enetered via add();
 
-	$this->load->model('Mailing_list_model'); // this loads the model
+	 // this loads the model
 	$this->load->library('form_validation'); // a lot of crap
 	// $this->load->helper->('url'); //usually small scripts
 	//must have at least one validation rule to be able to insert in db.
@@ -97,9 +93,9 @@ public function add()
 		// this refers to the current running object
 		// self refers to the class
 		$data['banner'] = "Data Entry Error!";
-		$data['style'] = "cerulean.css";
+		
 		$data['copyright'] = "Copyright goes here.";
-		$data['base_url'] = base_url();
+	
 		
 		$this->load->view('header',$data);  
 
